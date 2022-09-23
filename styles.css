@@ -1,0 +1,37 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border: 2px solid rgb(128, 0, 70);
+  display: flex;
+  justify-content: center;
+}
+
+header .subcontainer {
+  border: 2px solid green;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+main {
+  flex: 10 10 auto;
+  display: flex;
+  justify-content: center;
+  border: 2px solid blue;
+}
+
+main .cards {
+  border: 2px solid black;
+  width: 70%;
+}
+
