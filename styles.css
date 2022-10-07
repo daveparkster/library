@@ -48,3 +48,78 @@ main .cards {
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
 }
+
+/*styling for form for user to fill out info*/
+.form-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid yellow;
+}
+
+form {
+  position: relative;
+  background-color: rgb(240, 238, 241);
+  border: 2px solid red;
+  height: 35%;
+  width: 15%;
+  border-radius: 0.4rem;
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/*header of form*/
+form h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  word-spacing: -0.5rem;
+}
+
+/*remove labels*/
+label {
+  display: none;
+}
+
+/*increase font-size of placeholder*/
+input[placeholder] {
+  font-size: 1rem;
+}
+
+/*display label for checkbox*/
+fieldset label[for="read"] {
+  display: block;
+  font-size: 1.2rem;
+}
+
+/*adjust size of inputs*/
+input {
+  height: 10%;
+  margin: 0 2% 2% 2%;
+  border-radius: 0.4rem;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: none;
+}
+
+input[type="submit"] {
+  height: 12%;
+}
+
+
+/*
+form > * {
+  border: 2px solid green;
+}
+*/
