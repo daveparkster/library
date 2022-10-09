@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  min-height: 100vh;
+  min-height: 150vh;
   display: flex;
   flex-direction: column;
 }
@@ -39,6 +39,8 @@ main .cards {
 
 .modal-background {
   display: none;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: auto;
   left: 0;
@@ -47,15 +49,6 @@ main .cards {
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
-}
-
-/*styling for form for user to fill out info*/
-.form-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid yellow;
 }
 
 form {
@@ -116,10 +109,3 @@ fieldset {
 input[type="submit"] {
   height: 12%;
 }
-
-
-/*
-form > * {
-  border: 2px solid green;
-}
-*/
