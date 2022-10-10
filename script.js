@@ -31,6 +31,9 @@ function getForm(e) {
 
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
+
+  MODAL_BACKGROUND.style.display = "none";
+  FORM.reset();
 }
 
 /*Object constructor*/
