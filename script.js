@@ -14,3 +14,17 @@ window.addEventListener("click", (event) => {
   }
 });
 
+/*attach event listener to form submission*/
+const FORM = document.querySelector('form');
+
+FORM.addEventListener('submit', getForm);
+
+function getForm(event) {
+  event.preventDefault();
+
+  let title = document.querySelector('#title').value;
+  let author = document.querySelector('#author').value;
+  let pages = document.querySelector('#pages').value;
+  let read = document.querySelector('#read').value;
+}
+
