@@ -27,7 +27,9 @@ function getForm(e) {
   let title = document.querySelector('#title').value;
   let author = document.querySelector('#author').value;
   let pages = document.querySelector('#pages').value;
-  let read = document.querySelector('#read').value;
+  let read = document.querySelector('#read').checked; // change to checked property
+
+  console.log(read);
 
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
@@ -50,13 +52,50 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-
+/*adds the book onto the page*/
 function addBookToLibrary(object) {
   const CARDS = document.querySelector('.cards');
-  let book = document.createElement('div');
+  let bookContainer = document.createElement('div');
 
-  CARDS.appendChild(book).classList.add('sub-books');
+  CARDS.appendChild(bookContainer).classList.add('sub-books'); //adds the div and attaches class Name
+  
+  let currentBook = document.querySelectorAll('.sub-books')[document.querySelectorAll('.sub-books').length - 1];
 
+  /*creates section for books*/
+  let titleDom = document.createElement('div'); 
+  let authorDom = document.createElement('div');
+  let pagesDom = document.createElement('div');
+  let readButtonDom = document.createElement('button');
+  let removeButtonDom = document.createElement('button');
 
+  /*adds the sections and class name to the current book*/
+  currentBook.appendChild(titleDom).classList.add('title');
+  currentBook.appendChild(authorDom).classList.add('author');
+  currentBook.appendChild(pagesDom).classList.add('pages');
+  currentBook.appendChild(readButtonDom).classList.add('read-button');
+  currentBook.appendChild(removeButtonDom).classList.add('deletion');
+
+  /*extracts dom title,author,pages, read, and deletion*/
+  let currentTitle = currentBook.querySelector('.title');
+  let currentAuthor = currentBook.querySelector('.author');
+  let currentPages = currentBook.querySelector('.pages');
+  let currentRead = currentBook.querySelector('.read-button');
+  let currentDeletion = currentBook.querySelector('.deletion');
+
+  /*insert text*/
+  currentTitle.textContent = `'${object['title']}'`;
+  currentAuthor.textContent = object['author'];
+  currentPages.textContent = object['pages'];
+  currentRead.textContent = readBook(object);
+  currentDeletion.textContent = 'Remove';
+}
+
+/*helper function to determine read button's status*/
+function readBook(object) {
+  if(object['read'] === true) {
+    return 'Read';
+  } else {
+    return 'Not Read';
+  }
 }
 
