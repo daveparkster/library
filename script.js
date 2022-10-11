@@ -32,6 +32,12 @@ function getForm(e) {
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
 
+  /*save the currentBook into the variable */
+  let currentBook = myLibrary[myLibrary.length -1]; 
+
+  /*creates a new book into the dom*/
+  addBookToLibrary(currentBook);
+
   MODAL_BACKGROUND.style.display = "none";
   FORM.reset();
 }
@@ -42,5 +48,15 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+}
+
+
+function addBookToLibrary(object) {
+  const CARDS = document.querySelector('.cards');
+  let book = document.createElement('div');
+
+  CARDS.appendChild(book).classList.add('sub-books');
+
+
 }
 
