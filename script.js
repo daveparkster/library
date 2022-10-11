@@ -88,6 +88,18 @@ function addBookToLibrary(object) {
   currentPages.textContent = object['pages'];
   currentRead.textContent = readBook(object);
   currentDeletion.textContent = 'Remove';
+
+  /*attach eventListener to the readbutton*/
+  currentRead.addEventListener('click', () => {
+    
+    let readStatus = currentRead.textContent; //extract the read status
+    currentRead.textContent = switchReadStatus(readStatus); //switches the read status 
+    let newReadStatus = currentRead.textContent;
+
+    let indexDom = Array.from(document.querySelectorAll('.sub-books')).indexOf(currentBook);
+
+    modifyReadInLibrary(myLibrary, indexDom, newReadStatus); /*updates the read status in storage*/
+  });
 }
 
 /*helper function to determine read button's status*/
@@ -99,3 +111,20 @@ function readBook(object) {
   }
 }
 
+/*helper function to switch read status*/
+function switchReadStatus(string) {
+  if(string === 'Read') {
+    return 'Not Read';
+  } else if (string === 'Not Read') {
+    return 'Read';
+  }
+}
+
+/*updates the read status in storage*/
+function modifyReadInLibrary(array, index, string) {
+  if(string === 'Read') {
+    array[index]['read'] = true;
+  } else if(string === 'Not Read') {
+    array[index]['read'] = false;
+  }
+}
