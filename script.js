@@ -29,8 +29,6 @@ function getForm(e) {
   let pages = document.querySelector('#pages').value;
   let read = document.querySelector('#read').checked; // change to checked property
 
-  console.log(read);
-
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
 
@@ -91,7 +89,6 @@ function addBookToLibrary(object) {
 
   /*attach eventListener to the readbutton*/
   currentRead.addEventListener('click', () => {
-    
     let readStatus = currentRead.textContent; //extract the read status
     currentRead.textContent = switchReadStatus(readStatus); //switches the read status 
     let newReadStatus = currentRead.textContent;
@@ -99,6 +96,13 @@ function addBookToLibrary(object) {
     let indexDom = Array.from(document.querySelectorAll('.sub-books')).indexOf(currentBook);
 
     modifyReadInLibrary(myLibrary, indexDom, newReadStatus); /*updates the read status in storage*/
+  });
+
+  /*attach event listener to delete button*/ 
+  currentDeletion.addEventListener('click', () => {
+    let indexDom = Array.from(document.querySelectorAll('.sub-books')).indexOf(currentBook); //get index in dom
+    myLibrary.splice(indexDom, 1); //remove the book from the local storage
+    currentBook.remove(); //remove the current book from dom
   });
 }
 
