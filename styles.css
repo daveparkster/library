@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  min-height: 150vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -30,13 +30,25 @@ main {
   border: 2px solid blue;
 }
 
+/*set display to grid*/
+/*each row will contain 3 cards*/
 main .cards {
   border: 2px solid black;
   width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content min-content 1fr min-content; /*fills up vertical space*/
+  grid-gap: 1.4rem;
+}
+
+/*height and styling of book entry*/
+.cards > * {
+  height: 18rem;
+  border: 2px solid blue;
+  border-radius: 0.4rem;
 }
 
 /*styling for modal background*/
-
 .modal-background {
   display: none;
   justify-content: center;
