@@ -70,6 +70,7 @@ main .cards {
   background-color: white;
   display: flex;
   flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 /*styling for the title, author, and pages*/
@@ -95,7 +96,7 @@ main .cards {
 }
 
 .cards > * > .read-button {
-  background-color: rgb(184, 240, 184);
+  background-color: #9FFF9C;
   border: none;
 }
 
