@@ -55,6 +55,7 @@ main {
 /*set display to grid*/
 /*each row will contain 3 cards*/
 main .cards {
+  margin-top: 1rem;
   width: 70%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -87,7 +88,6 @@ main .cards {
 form {
   position: relative;
   background-color: rgb(240, 238, 241);
-  border: 2px solid red;
   height: 35%;
   width: 15%;
   border-radius: 0.4rem;
@@ -105,7 +105,7 @@ form h3 {
 }
 
 /*remove labels*/
-label {
+form > label {
   display: none;
 }
 
@@ -114,31 +114,37 @@ input[placeholder] {
   font-size: 1rem;
 }
 
-/*display label for checkbox*/
-fieldset label[for="read"] {
-  display: block;
-  font-size: 1.2rem;
-}
-
 /*adjust size of inputs*/
-input {
+ form > input {
   height: 10%;
-  margin: 0 2% 2% 2%;
-  border-radius: 0.4rem;
+  margin: 0 3% 3% 3%;
+  border-radius: 0.3rem;
+  border: 1px solid black;
 }
 
 fieldset {
-  margin: 0;
-  padding: 0.3rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 0.2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  justify-content: center;
+  gap: 0.3rem;
   border: none;
 }
 
-button[type="submit"] {
-  height: 12%;
+fieldset label {
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+}
+
+form button[type="submit"] {
+  height: 13%;
+  margin: 2% 3.5% 3.5% 3.5%;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+  font-size: 1rem;
+  background-color: #9FFF9C;
+  border: none;
+}
+
+form button[type="submit"]:hover {
+  background-color: #7aeb76;
 }
