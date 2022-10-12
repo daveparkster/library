@@ -95,6 +95,23 @@ main .cards {
   border-radius: 0.5rem;
 }
 
+.cards > * > .read-button {
+  background-color: rgb(184, 240, 184);
+  border: none;
+}
+
+.cards > * > .deletion {
+  background-color: rgb(247, 195, 195);
+  border: none;
+}
+
+.read-button:hover {
+  background-color: rgb(127, 214, 127);
+}
+
+.deletion:hover {
+  background-color: rgb(214, 123, 123);
+}
 /*styling for modal background*/
 .modal-background {
   display: none;
