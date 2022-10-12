@@ -49,13 +49,13 @@ main {
   flex: 10 10 auto;
   display: flex;
   justify-content: center;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(231, 231, 231);
 }
 
 /*set display to grid*/
 /*each row will contain 3 cards*/
 main .cards {
-  margin-top: 1rem;
+  margin-top: 2rem;
   width: 70%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -68,6 +68,31 @@ main .cards {
   height: 18rem;
   border: 2px solid blue;
   border-radius: 0.4rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/*styling for the title, author, and pages*/
+.cards > * > div {
+  flex: 0.8 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  word-spacing: -0.8rem;
+  word-wrap: break-word;
+}
+
+.cards > * > button {
+  border: 2px solid black;
+  flex: 0.6 0.6;
+  width: 45%;
+  height: 20%;
+  align-self: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
 }
 
 /*styling for modal background*/
