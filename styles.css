@@ -87,7 +87,7 @@ main .cards {
 .cards > * > button {
   border: 2px solid black;
   flex: 0.6 0.6;
-  width: 45%;
+  width: 55%;
   height: 20%;
   align-self: center;
   margin-bottom: 1rem;
