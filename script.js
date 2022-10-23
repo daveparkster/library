@@ -21,6 +21,15 @@ let myLibrary = [];
 
 FORM.addEventListener('submit', getForm);
 
+class Book {
+  constructor(_title, _author, _pages, _read) {
+    this.title = _title;
+    this.author = _author;
+    this.pages = _pages;
+    this.read = _read;
+  }
+}
+
 function getForm(e) {
   e.preventDefault();
 
@@ -40,14 +49,6 @@ function getForm(e) {
 
   MODAL_BACKGROUND.style.display = "none";
   FORM.reset();
-}
-
-/*Object constructor*/
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
 }
 
 /*adds the book onto the page*/
